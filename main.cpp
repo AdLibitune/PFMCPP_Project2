@@ -1,4 +1,6 @@
 #include <iostream>
+using std::string;
+
 
 template<typename ...T>
 void ignoreUnused(T&&...) { }
@@ -16,15 +18,16 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ Interger               -> int
+ Character              -> char
+ Boolean                -> bool
+ Floating Point         -> float
+ Doable Floating Point  -> doulbe
+ Void                   -> void 
+ Wide Character         -> wchart_t
+
+
+
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
         - just ignore wchar_t. you do not need to declare 3 variables of type 'wchar_t'
@@ -58,11 +61,16 @@ video: Chapter 2 - Part 3
 void variableDeclarations()
 {
     //example:
-    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    //int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+    //ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
 
+    int apple = 3, banana = 2, grape = 34;
+    char doorLetter = 'b', grade = 'a', lastChar = 'z';
+    bool lampIsOn = true, taskDone = false, blueSky = true;
+    float houseTemperatureCg = 25.5f, carSpeedKmh = 83.25f, noteMiddleCFreq = 261.63f;
+    double currencyEURUSD = 1.08504, ampAttackS = 0.053, successProbability = 0.9156;
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(apple, banana, grape, doorLetter, grade, lastChar, lampIsOn, taskDone, blueSky, houseTemperatureCg, carSpeedKmh, noteMiddleCFreq, currencyEURUSD, ampAttackS, successProbability);
 }
 
 /*
@@ -79,43 +87,84 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+bool allowedToDrinkAlcohol (bool adult, bool insideBar, bool openHours)
+{
+    ignoreUnused (adult, insideBar, openHours);
+    return {};
+}
 
 /*
  2)
  */
-
+bool boilWater (int waterTemperature, int boilingTemperature = 100)
+{
+    ignoreUnused (waterTemperature, boilingTemperature);
+    return {};
+}
 /*
  3)
  */
-
+int parcelCounterDeliver (int john, int max, int gabriel)
+{
+    ignoreUnused (john, max, gabriel);
+    return {};
+}
 /*
  4)
  */
-
+int buildingNeighbours (int floor0, int floor1, int floor2, int floor3 = 4)
+{
+    ignoreUnused (floor0, floor1, floor2, floor3);
+    return {};
+}
 /*
  5)
  */
-
+char secondLetterInAWord (string word, int position = 2)
+{
+    ignoreUnused (word, position);
+    return {};
+}
 /*
  6)
  */
-
+char studentGrade (double exercises, double behaviour, int attendance)
+{
+    ignoreUnused (exercises, behaviour, attendance);
+    return {};
+}
 /*
  7)
  */
-
+float countryGDPInTrillions (float privateConsumption, float grossPrivateInvestment, float governmentInvestment, float governmentSpending, float exports, float imports)
+{
+    ignoreUnused (privateConsumption, grossPrivateInvestment, governmentInvestment, governmentSpending, exports, imports);
+    return {};
+}
 /*
  8)
  */
-
+float householdPiggyBank (float juliaContribution, float johanContribution, float ramiContribution, float meContribution = 1055.25f)
+{
+    ignoreUnused (juliaContribution, johanContribution, ramiContribution, meContribution);
+    return{};
+}
 /*
  9)
  */
-
+double familyWeightAverage (double juliaWeight, double johanWeight, double ramiWeight, double meWeight = 71.23)
+{
+    ignoreUnused (juliaWeight, johanWeight, ramiWeight, meWeight);
+    return{};
+}
 /*
  10)
  */
-
+double scoreAverage (double test1, double test2, double test3 = 8.5)
+{
+    ignoreUnused (test1, test2, test3);
+    return{};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -136,27 +185,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto canDrinkAlcohol = allowedToDrinkAlcohol (true, true, true); 
     //2)
-    
+    auto boiledWater (102);
     //3)
-    
+    auto parcelsDelivered = parcelCounterDeliver (20, 23, 31);
     //4)
-    
+    auto neighboursNumb = buildingNeighbours (4, 5, 4);
     //5)
-    
+    auto letterNumb2 = secondLetterInAWord ("string");
     //6)
-    
+    auto alexGrade = studentGrade (6.51, 8.24, 52);
     //7)
-    
+    auto americaGDP = countryGDPInTrillions (10.3623f, 1.7638f, 1.1864f, 1.7883f, 1.7293f, 2.2287f);
     //8)
-    
+    auto smithFamilySavings = householdPiggyBank (1023.54f, 5132.11f, 4321.91f, 7112.56f);
     //9)
-    
+    auto smithFamilyAverageWeight = familyWeightAverage (73.312, 20.561, 24.648, 71.934);
     //10)
+    auto michaelScore = scoreAverage (9.56, 8.45);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, canDrinkAlcohol, boiledWater, parcelsDelivered, neighboursNumb, letterNumb2, alexGrade, americaGDP, smithFamilySavings, smithFamilyAverageWeight, michaelScore);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
