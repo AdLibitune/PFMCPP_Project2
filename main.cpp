@@ -87,7 +87,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-bool allowedToDrinkAlcohol (bool adult, bool insideBar, bool openHours)
+bool checkAllowedToDrinkAlcohol (bool adult, bool insideBar, bool openHours)
 {
     ignoreUnused (adult, insideBar, openHours);
     return {};
@@ -104,7 +104,7 @@ bool boilWater (int waterTemperature, int boilingTemperature = 100)
 /*
  3)
  */
-int parcelCounterDeliver (int john, int max, int gabriel)
+int countParcelDelivered (int john, int max, int gabriel)
 {
     ignoreUnused (john, max, gabriel);
     return {};
@@ -112,7 +112,7 @@ int parcelCounterDeliver (int john, int max, int gabriel)
 /*
  4)
  */
-int buildingNeighbours (int floor0, int floor1, int floor2, int floor3 = 4)
+int countBuildingNeighbours (int floor0, int floor1, int floor2, int floor3 = 4)
 {
     ignoreUnused (floor0, floor1, floor2, floor3);
     return {};
@@ -120,7 +120,7 @@ int buildingNeighbours (int floor0, int floor1, int floor2, int floor3 = 4)
 /*
  5)
  */
-char secondLetterInAWord (string word, int position = 2)
+char getSecondLetterInAWord (string word, int position = 2)
 {
     ignoreUnused (word, position);
     return {};
@@ -128,7 +128,7 @@ char secondLetterInAWord (string word, int position = 2)
 /*
  6)
  */
-char studentGrade (double exercises, double behaviour, int attendance)
+char getStudentGrade (double exercises, double behaviour, int attendance)
 {
     ignoreUnused (exercises, behaviour, attendance);
     return {};
@@ -136,7 +136,7 @@ char studentGrade (double exercises, double behaviour, int attendance)
 /*
  7)
  */
-float countryGDPInTrillions (float privateConsumption, float grossPrivateInvestment, float governmentInvestment, float governmentSpending, float exports, float imports)
+float getCountryGDPInTrillions (float privateConsumption, float grossPrivateInvestment, float governmentInvestment, float governmentSpending, float exports, float imports)
 {
     ignoreUnused (privateConsumption, grossPrivateInvestment, governmentInvestment, governmentSpending, exports, imports);
     return {};
@@ -144,7 +144,7 @@ float countryGDPInTrillions (float privateConsumption, float grossPrivateInvestm
 /*
  8)
  */
-float householdPiggyBank (float juliaContribution, float johanContribution, float ramiContribution, float meContribution = 1055.25f)
+float calculateHouseholdPiggyBank (float juliaContribution, float johanContribution, float ramiContribution, float meContribution = 1055.25f)
 {
     ignoreUnused (juliaContribution, johanContribution, ramiContribution, meContribution);
     return{};
@@ -152,7 +152,7 @@ float householdPiggyBank (float juliaContribution, float johanContribution, floa
 /*
  9)
  */
-double familyWeightAverage (double juliaWeight, double johanWeight, double ramiWeight, double meWeight = 71.23)
+double calculateFamilyWeightAverage (double juliaWeight, double johanWeight, double ramiWeight, double meWeight = 71.23)
 {
     ignoreUnused (juliaWeight, johanWeight, ramiWeight, meWeight);
     return{};
@@ -160,7 +160,7 @@ double familyWeightAverage (double juliaWeight, double johanWeight, double ramiW
 /*
  10)
  */
-double scoreAverage (double test1, double test2, double test3 = 8.5)
+double calculateScoreAverage (double test1, double test2, double test3 = 8.5)
 {
     ignoreUnused (test1, test2, test3);
     return{};
@@ -185,25 +185,25 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    auto canDrinkAlcohol = allowedToDrinkAlcohol (true, true, true); 
+    auto canDrinkAlcohol = checkAllowedToDrinkAlcohol (true, true, true); 
     //2)
     auto boiledWater (102);
     //3)
-    auto parcelsDelivered = parcelCounterDeliver (20, 23, 31);
+    auto parcelsDelivered = countParcelDelivered (20, 23, 31);
     //4)
-    auto neighboursNumb = buildingNeighbours (4, 5, 4);
+    auto neighboursNumb = countBuildingNeighbours (4, 5, 4);
     //5)
-    auto letterNumb2 = secondLetterInAWord ("string");
+    auto letterNumb2 = getSecondLetterInAWord ("string");
     //6)
-    auto alexGrade = studentGrade (6.51, 8.24, 52);
+    auto alexGrade = getStudentGrade (6.51, 8.24, 52);
     //7)
-    auto americaGDP = countryGDPInTrillions (10.3623f, 1.7638f, 1.1864f, 1.7883f, 1.7293f, 2.2287f);
+    auto americaGDP = getCountryGDPInTrillions (10.3623f, 1.7638f, 1.1864f, 1.7883f, 1.7293f, 2.2287f);
     //8)
-    auto smithFamilySavings = householdPiggyBank (1023.54f, 5132.11f, 4321.91f, 7112.56f);
+    auto smithFamilySavings = calculateHouseholdPiggyBank (1023.54f, 5132.11f, 4321.91f, 7112.56f);
     //9)
-    auto smithFamilyAverageWeight = familyWeightAverage (73.312, 20.561, 24.648, 71.934);
+    auto smithFamilyAverageWeight = calculateFamilyWeightAverage (73.312, 20.561, 24.648, 71.934);
     //10)
-    auto michaelScore = scoreAverage (9.56, 8.45);
+    auto michaelScore = calculateScoreAverage (9.56, 8.45);
     
     ignoreUnused(carRented, canDrinkAlcohol, boiledWater, parcelsDelivered, neighboursNumb, letterNumb2, alexGrade, americaGDP, smithFamilySavings, smithFamilyAverageWeight, michaelScore);
     std::cout << "good to go!" << std::endl;
